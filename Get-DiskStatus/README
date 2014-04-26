@@ -1,0 +1,14 @@
+The script checks health status of disk volumes using "diskpart" and creates an event in the EventLog.
+
+Windows 7 does not generate any events when built-in software RAID disk is failed.
+This script is a work-around, which could help to notify the user when it's happened.
+(NOTE! It supposed to be fixed in Windows 8)
+This problem is discussed on few resources. For example: 
+"http://social.technet.microsoft.com/Forums/windows/en-US/5d3c3d5c-38ee-4a3d-9243-17712556eab8/windows-7-has-no-notification-of-raid-failure"
+It checks health status of all disks attached to the local host (Except "Removable"!!!).
+If the status is Failed, it generates an event in the System log.
+You can change event's parameters in "Constants" region.
+You need to add this script to the Task Scheduller and check the EventLog regurally.
+Also you could create a task which will send e-mail or show a message window in case of the volume failure (the event).
+The script uses "diskpart" utility.
+

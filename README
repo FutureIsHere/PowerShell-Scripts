@@ -1,0 +1,5 @@
+The repo contains few usefull PowerShell scripts.
+If you don't want to use the script, you could check another repository which contains only functions (https://github.com/FutureIsHere/PowerShell-Functions)
+
+1. Get-DiskStatus - checks health status of disk volumes using "diskpart" and creates an event in the EventLog. 
+	It was created mainly to monitor a soft RAID volumes failures in Windows 7.
