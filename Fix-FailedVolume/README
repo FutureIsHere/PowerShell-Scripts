@@ -1,0 +1,5 @@
+The script tries to recover the failed folumes if there is any.
+It check if there is any of failed volumes. If so, it runs "diskpart" command to fix it.
+The script will be waiting until the volume is recovered.
+It was created mainly to recover the software RAID volumes.
+The script also generated the events in the EventLog, so it easy to see the progress and keep the history.
