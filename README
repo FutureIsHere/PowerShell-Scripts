@@ -3,3 +3,4 @@ If you don't want to use the script, you could check another repository which co
 
 1. Get-DiskStatus - checks health status of disk volumes using "diskpart" and creates an event in the EventLog. 
 	It was created mainly to monitor a soft RAID volumes failures in Windows 7.
+2. Fix-FailedVolume - The script tries to recover the failed volumes if there is any.
