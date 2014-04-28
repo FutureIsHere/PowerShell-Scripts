@@ -1,5 +1,12 @@
-The script tries to recover the failed volumes if there is any.
-It check if there is any of failed volumes. If so, it runs "diskpart" command to fix it.
-The script will be waiting until the volume is recovered.
-It was created mainly to recover the software RAID volumes.
-The script also generated the events in the EventLog, so it easy to see the progress and keep the history.
+The script verifies the disk volumes status. If one of volumes is "Failed", it generates an error message and try to recover the volume.
+The script is made mostly to recover software RAID volumes.
+It was found that Windows 7 does not generate any events when built-in software RAID disk is failed.
+The script waits until rebuilding process has finished. It verifies volume's status periodicly and generates the events.
+If the rebuild has not completed successfully, the error event will be generated.
+All events could monitored by creating a task (e-mail or pop-up message).
+The script uses "diskpart" utility.
+
+You can modify the EventLog parameters by changing the constants.
+
+If you need only to create an event in case of volume's failure, you could use another my script:
+https://github.com/FutureIsHere/PowerShell-Scripts/tree/master/Get-DiskStatus
